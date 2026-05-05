@@ -1,11 +1,6 @@
 [Unit]
-Description=Dispara atualizacao apos login grafico
-After=graphical-session.target
-Wants=graphical-session.target
+Description=Executa atualizacao automatica da sessao
 
 [Service]
 Type=oneshot
 ExecStart=%h/.local/bin/atualiza-no-login.sh
-
-[Install]
-WantedBy=default.target

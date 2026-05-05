@@ -1,0 +1,10 @@
+[Unit]
+Description=Agenda atualizacao 30s apos iniciar sessao
+
+[Timer]
+OnStartupSec=30s
+Unit=atualiza-no-login.service
+Persistent=false
+
+[Install]
+WantedBy=timers.target

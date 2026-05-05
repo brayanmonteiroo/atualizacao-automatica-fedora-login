@@ -6,4 +6,6 @@ After=network-online.target
 [Service]
 Type=oneshot
 ExecStart=/usr/local/bin/atualiza-sistema.sh
+Nice=19
+IOSchedulingClass=idle
 TimeoutStartSec=0
