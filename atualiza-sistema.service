@@ -1,5 +1,5 @@
 [Unit]
-Description=Atualiza DNF e Flatpak no boot
+Description=Atualiza DNF e Flatpak como root
 Wants=network-online.target
 After=network-online.target
 
@@ -7,6 +7,3 @@ After=network-online.target
 Type=oneshot
 ExecStart=/usr/local/bin/atualiza-sistema.sh
 TimeoutStartSec=0
-
-[Install]
-WantedBy=multi-user.target
