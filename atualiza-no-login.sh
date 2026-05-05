@@ -9,7 +9,7 @@ notify_send() {
   fi
 }
 
-notify_send "Atualizacao automatica" "Atualizacao iniciada apos 30 segundos da sessao."
+notify_send "Atualizacao automatica" "Atualizacao iniciada apos 15 segundos da sessao."
 
 if sudo /usr/bin/systemctl start --wait atualiza-sistema.service; then
   notify_send "Atualizacao automatica" "Atualizacao concluida com sucesso."

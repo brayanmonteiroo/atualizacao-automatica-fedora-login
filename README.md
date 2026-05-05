@@ -1,6 +1,6 @@
-# Atualizacao automatica no Fedora 44 (timer 30s apos sessao)
+# Atualizacao automatica no Fedora 44 (timer 15s apos sessao)
 
-Este projeto atualiza o sistema automaticamente 30 segundos apos o inicio da sessao do usuario, sem acoplamento direto com unit de autostart de login.
+Este projeto atualiza o sistema automaticamente 15 segundos apos o inicio da sessao do usuario, sem acoplamento direto com unit de autostart de login.
 
 ## Resumo rapido
 
@@ -8,7 +8,7 @@ Em conjunto:
 
 - `atualiza-sistema.sh` executa `dnf upgrade --refresh -y` e `flatpak update -y`.
 - `atualiza-sistema.service` roda o script como root com prioridade reduzida de CPU/IO.
-- `atualiza-no-login.timer` agenda a execucao para 30 segundos apos iniciar a sessao.
+- `atualiza-no-login.timer` agenda a execucao para 15 segundos apos iniciar a sessao.
 - `atualiza-no-login.service` e acionado pelo timer e executa o script de usuario.
 - `atualiza-no-login.sh` envia notificacao no inicio e no fim (sucesso/erro) e dispara o service root.
 
@@ -16,7 +16,7 @@ Em conjunto:
 
 - `atualiza-sistema.sh`: script de atualizacao.
 - `atualiza-sistema.service`: unit de sistema (root).
-- `atualiza-no-login.timer`: timer de usuario com `OnStartupSec=30s`.
+- `atualiza-no-login.timer`: timer de usuario com `OnStartupSec=15s`.
 - `atualiza-no-login.service`: unit de usuario acionada pelo timer.
 - `atualiza-no-login.sh`: script de usuario com notificacoes.
 
@@ -76,13 +76,13 @@ systemctl --user enable --now atualiza-no-login.timer
 sudo systemctl start --wait atualiza-sistema.service
 ```
 
-### Testar fluxo completo por timer (30s apos sessao)
+### Testar fluxo completo por timer (15s apos sessao)
 
 ```bash
 systemctl --user start atualiza-no-login.timer
 ```
 
-O timer agenda a execucao 30 segundos apos iniciar a sessao.
+O timer agenda a execucao 15 segundos apos iniciar a sessao.
 
 ## Ver logs
 

@@ -1,8 +1,10 @@
 [Unit]
-Description=Agenda atualizacao 30s apos iniciar sessao
+Description=Agenda atualizacao 15s apos iniciar sessao
 
 [Timer]
-OnStartupSec=30s
+OnStartupSec=15s
+AccuracySec=1s
+RandomizedDelaySec=0
 Unit=atualiza-no-login.service
 Persistent=false
 
