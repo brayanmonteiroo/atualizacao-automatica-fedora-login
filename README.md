@@ -1,6 +1,6 @@
 # Atualizacao automatica no Fedora 44 (apos login com notificacao)
 
-Este projeto atualiza o sistema logo apos voce entrar no desktop.
+Este projeto atualiza o sistema logo apos voce entrar no desktop. Essa atualização é feita em background, sem interromper a sessão.
 
 ## Resumo rapido
 
